@@ -2,12 +2,11 @@ window.addEventListener("load", startChatter, false);
 
 function startChatter(){
 	window.param = {
-		username: "",
-		channel: "Open"
+		username: "DR2N",
+		channel: "Howday"
 	};
 
-	window.param.username = prompt("What is your name?");
-	//window.channel = prompt("Join a channel!");
+	window.param. username = prompt('name');
 
 	window.socket = io();
 	socket.addEventListener('newMessage', receiveMessage, false);
@@ -15,7 +14,7 @@ function startChatter(){
 
 	window.textEntry = document.getElementById('textEntry');
 	window.sendButton = document.getElementById('sendButton');
-	window.messageArea = document.getElementById('messages');
+	window.messageList = document.getElementById('messageList');
 
 	textEntry.addEventListener('keydown', textKeyHandler, false);
 	sendButton.addEventListener('click', postMessage, false);
@@ -29,7 +28,12 @@ function textKeyHandler(event){
 }
 
 function postMessage(){
-	var messageText = textEntry.value;
+	var messageText = textEntry.value.trim();
+
+	if (!messageText){
+		return;
+	}
+
 	var message = {
 		contents: messageText,
 		sender: param.username,
@@ -43,19 +47,31 @@ function postMessage(){
 }
 
 function receiveMessage(message){
-	var messageDiv = document.createElement('div');
-	var lineBreak = document.createElement('br');
-	messageDiv.innerHTML = message.contents;
-	messageDiv.setAttribute('class', 'message');
+	var messageElement = document.createElement('li');
+	var messageTextElement = document.createElement('div')
+	messageTextElement.innerHTML = message.contents;
+
+	
+	messageElement.setAttribute('class', 'message');
+	messageTextElement.setAttribute('class', 'messageText');
+
+
 
 	if (message.sender == window.param.username){
-		messageDiv.style.float = 'right';
+
+		messageElement.setAttribute('class', 'message right');
+
 	}else{
-		messageDiv.style.float = 'left';
+		var senderElement = document.createElement('div');
+		senderElement.setAttribute('class', 'messageSender');
+		senderElement.innerHTML = message.sender[0].toUpperCase();
+		senderElement.setAttribute('title', message.sender);
+		messageElement.appendChild(senderElement);
+
 	}
 
-	messageArea.appendChild(messageDiv);
-	messageArea.appendChild(lineBreak);
+	messageElement.appendChild(messageTextElement);
+	messageList.appendChild(messageElement);
 
-	messageArea.scrollTo(0, messageArea.scrollHeight);
+	messageList.scrollTop = messageList.scrollHeight;
 }

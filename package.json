@@ -4,7 +4,7 @@
   "description": "The Chat App.",
   "main": "chatterBox.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node chatterBox.js"
   },
   "author": "Darren Fu",
   "license": "ISC",

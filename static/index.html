@@ -3,16 +3,35 @@
 <head>
 	<title>ChatterBox</title>
 	<link rel='stylesheet' type='text/css' href='style/stylesheet.css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<script src="/socket.io/socket.io.js"></script>
 	<script src='script/chatterClient.js'></script>
+
 </head>
 <body>
-	<div id='chatterWrap'>
-		<div id='messages'></div>
+
+	<div id='sideBar'></div>
+	<div id='chatListWrap'>
+		<ul id='chatList'>
+			
+		</ul>
+	</div>
+	<div id='chatMain'>
+		
+		<div id='chatHeader'>
+			<h1 id='chatTitle'>Howday</h1>
+		</div>
+
+		<div id='messageListWrap'>
+			<ul id='messageList'>
+			</ul>
+		</div>
+
 		<div id='postBox'>
 			<textarea id='textEntry' type='text'></textarea> 
-			<button id='sendButton'>SEND</button>
+			<button id='sendButton'><i class="fa fa-paper-plane"></i></button>
 		</div>
+
 	</div>
 </body>
 </html>
