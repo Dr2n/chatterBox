@@ -2,6 +2,7 @@ body {
 	margin: 0 0;
 	padding: 0 0;
 	overflow: hidden;
+<<<<<<< HEAD
 	font-family: Open Sans;
 }
 
@@ -153,4 +154,57 @@ h1 {
 
 .right {
 	float: right;
+=======
+	font-family: sans-serif;
+}
+
+#chatterWrap {
+	border-radius: 15px;
+	position: relative;
+	width: 600px;
+	height: 80vh;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: gray;
+}
+
+#messages {
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	width: 500px;
+	height: calc(80vh - 250px);
+	overflow-y: scroll;
+}
+
+#postBox{
+	position: absolute;
+	bottom: 0px;
+}
+
+#textEntry {
+	margin: 10px;
+	width: 450px;
+	height: 100px;
+	float: left;
+}
+
+#sendButton {
+	margin: 10px;
+	height: 100px;
+	width: 100px;
+	float: right;
+}
+
+.message {
+	display: inline-block;
+	clear: both;
+	max-width: 400px;
+	padding: 15px;
+	margin-bottom: 10px;
+	background-color: black;
+	border-radius: 15px;
+	color: white;
+>>>>>>> bd20c5187830511f28d112a2333d96bba1bfef1d
 }

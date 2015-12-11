@@ -4,7 +4,8 @@
   "description": "The Chat App.",
   "main": "chatterBox.js",
   "scripts": {
-    "start": "node chatterBox.js"
+    "start": "node chatterBox.js",
+    "test": "echo"
   },
   "author": "Darren Fu",
   "license": "ISC",
