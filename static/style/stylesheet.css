@@ -2,155 +2,55 @@ body {
 	margin: 0 0;
 	padding: 0 0;
 	overflow: hidden;
-	font-family: Open Sans;
+	font-family: sans-serif;
 }
 
-h1 {
-	font-weight: normal;
-	font-size: 24px;
-	line-height: 90px;
-	padding: 0 0;
-	margin: 0 0;
-}
-
-::-webkit-scrollbar {
-	display: none;
-}
-
-
-
-/*sideBar*/
-#sideBar {
-	background-color: #313131;
-	float: left;
-	height: 100vh;
-	width: 90px;
-	top: 0px;
-	left: 0px;
-}
-
-/*chatList*/
-#chatListWrap {
-	background-color: #f1f1f1;
-	float: left;
-	height: 100vh;
-	width: 460px;
-}
-
-/*chatMain*/
-
-#chatMain {
-	height: 100vh;
-	color: white;
-	overflow: hidden;
+#chatterWrap {
+	border-radius: 15px;
 	position: relative;
-	background-image: url('/texture/restaurant.png');
-}
-
-#chatHeader {
-	box-sizing: border-box;
-	padding-left: 100px;
-	padding-right: 100px;
-	position: absolute;
-	width: 100%;
-	height: 90px;
-	background-color: #EF5350;
-	z-index: 100;
-}
-
-#postBox {
 	width: 600px;
-	left: 50%;
-	transform: translate(-50%);
-	bottom: 50px;
-	height: 60px;
-	overflow: hidden;
-	border: 1px solid gray;
-	border-radius: 10px;
+	height: 80vh;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: gray;
+}
+
+#messages {
 	position: absolute;
-}
-
-#postBox textArea {
-	box-sizing: border-box;
-	height: 100%;
-	width: 540px;
-	padding: 10px 20px;
-	overflow: hidden;
-	resize: none;
-	border: 0px solid black;
-	font-family: inherit;
-	font-size: 16px;
-}
-
-#postBox button {
-	float: right;
-	border: 0px solid black;
-	height: 100%;
-	width: 60px;
-	margin: 0 0;
-	padding: 0 0;
-	background-color: #EF5350;
-	color: white;
-	font-size: 18px;
-	transition: background-color 0.2s;
-}
-
-#postBox button:hover {
-	background-color: #d32f2f;
-}
-
-/*Messages*/
-
-#messageListWrap {
-	position: absolute;
-	left: 50%;
-	transform: translate(-50%);
-	height: calc(100vh - 250px);
-	width: 750px;
-	bottom: 150px;
-	overflow: hidden;
-}
-
-#messageList {
-	position: absolute;
-	width: 765px;
-	max-height: calc(100vh - 250px);
-	bottom: 0px;
+	top: 50px;
+	left: 50px;
+	width: 500px;
+	height: calc(80vh - 250px);
 	overflow-y: scroll;
-	margin: 0px 0px;
-	padding: 0px 0px;
+}
+
+#postBox{
+	position: absolute;
+	bottom: 0px;
+}
+
+#textEntry {
+	margin: 10px;
+	width: 450px;
+	height: 100px;
+	float: left;
+}
+
+#sendButton {
+	margin: 10px;
+	height: 100px;
+	width: 100px;
+	float: right;
 }
 
 .message {
-	display:block;
-	margin-bottom: 10px;
+	display: inline-block;
 	clear: both;
-	float: left;
-}
-
-.messageSender {
-	margin-right: 20px;
-	border-radius: 10px;
-	width: 55px;
-	height: 55px;
-	background-color: black;
-	float: left;
-	line-height: 55px;
-	font-size: 24px;
-	text-align: center;
-	font-weight: 100;
-}
-
-.messageText {
-	border-radius: 10px;
-	padding: 16px 16px;
-	background-color: black;
 	max-width: 400px;
-	word-wrap: nor;
-	float: left;
-}
-
-
-.right {
-	float: right;
+	padding: 15px;
+	margin-bottom: 10px;
+	background-color: black;
+	border-radius: 15px;
+	color: white;
 }
